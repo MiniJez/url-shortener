@@ -1,0 +1,15 @@
+body, html {
+    height: 100%;
+    background-color: #262626;
+}
+
+.mainContainer {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+}
+
+.white {
+    color: white;
+}

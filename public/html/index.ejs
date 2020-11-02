@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Url Shortener</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div class="container d-flex flex-column mainContainer">
+        <div class="w-75 py-5">
+            <h1 class="my-5 text-center white">Url Shortener</h1>
+            <form action="/urlshortener/" method="POST" class="mb-5">
+                <div class="form-group mb-4 text-left">
+                    <label for="url" class="white">Url to short</label>
+                    <input type="url" class="form-control" id="url" name="url" required>
+                </div>
+                <div class="form-group mb-5 text-left">
+                    <label for="slug" class="white">Slug</label>
+                    <input type="text" class="form-control" id="slug" name="slug" required>
+                </div>
+                <button type="submit" class="btn btn-success">Shorten</button>
+            </form>
+            <% if(showData) { %>
+            <div class="table-responsive">
+                <table class="table table-bordered table-dark">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Url</th>
+                            <td><%= url %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Slug</th>
+                            <td><%= slug %></td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Shorten url</th>
+                            <td><a href=<%= `https://eclisson.duckdns.org/urlshortener/${slug}` %>><%= `https://eclisson.duckdns.org/urlshortener/${slug}` %></a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <% } %>
+            <% if(showError) { %>
+            <div class="alert alert-danger" role="alert">
+                <%= error %>
+            </div>
+            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>
