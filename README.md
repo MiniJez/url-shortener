@@ -1,3 +1,3 @@
 # url-shortener
 
-A simple url shortener made with NodeJS / Express / MongoDB
+A simple url shortener made with NodeJS / Express / MongoDB / EJS
